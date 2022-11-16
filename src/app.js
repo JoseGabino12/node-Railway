@@ -5,11 +5,11 @@ import { createPool } from "mysql2/promise";
 const pool = createPool({
   user: "root",
 
-  password: "aK0L1lQCoegrHGozc9L9",
+  password: "sp1dUEqMtOD2pmjgA8gp",
 
-  host: "containers-us-west-86.railway.app",
+  host: "containers-us-west-99.railway.app",
 
-  port: 5640,
+  port: 7767,
 
   database: "railway",
 });
