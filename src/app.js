@@ -23,7 +23,9 @@ app.get("/", (req, res) => {
 app.get("/usuarios", async (req, res) => {
   const [result] = await pool.query("select * from users");
 
-  res.json(result);
+  result.forEach((user) => {
+    res.json(user);
+  });
 });
 
 app.get("/agregarusuario", async (req, res) => {
