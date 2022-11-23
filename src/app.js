@@ -27,13 +27,13 @@ app.get("/usuarios", async (req, res) => {
 });
 
 app.get("/agregarusuario", async (req, res) => {
-  const nombre = req.query.nombre;
+  const nombre = req.query.name;
 
-  const contrasena = req.query.contrasena;
+  const contrasena = req.query.password;
 
-  const correo = req.query.correo;
+  const correo = req.query.email;
 
-  const tienda = req.query.tienda;
+  const tienda = req.query.store;
 
   const [result] = await pool.query(
     `INSERT INTO users (name, password, email, store) VALUES ('${nombre}', '${contrasena}', '${correo}','${tienda}')`
