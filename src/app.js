@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/usuarios", async (req, res) => {
-  const [result] = await pool.query("select * from usuario");
+  const [result] = await pool.query("select * from users");
 
   res.json(result[0]);
 });
@@ -36,7 +36,7 @@ app.get("/agregarusuario", async (req, res) => {
   const tienda = req.query.tienda;
 
   const [result] = await pool.query(
-    `INSERT INTO usuario (nombre, contrasena, correo, tienda) VALUES ('${nombre}', '${contrasena}', '${correo}','${tienda}')`
+    `INSERT INTO users (name, password, email, store) VALUES ('${nombre}', '${contrasena}', '${correo}','${tienda}')`
   );
 
   res.json(result[0]);
