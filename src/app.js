@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 app.get("/usuarios", async (req, res) => {
   const [result] = await pool.query("select * from users");
 
-  res.json(result[0]);
+  res.json(result);
 });
 
 app.get("/agregarusuario", async (req, res) => {
